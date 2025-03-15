@@ -1,6 +1,7 @@
 import React from "react";
 import Controls from "../components/UI/Controls";
 import ImageContainer from "../components/UI/ImageContainer";
+import MainLayout from "../layouts/MainLayout";
 
 const HomePage = () => {
     const images = [
@@ -11,18 +12,14 @@ const HomePage = () => {
     ];
 
     return (
-        <div className="container">
-            <h1 className="title">Photo Fetcher</h1>
+        <MainLayout>
             <Controls />
             <div className="image-grid">
                 {images.map((image) => (
                     <ImageContainer key={image.id} src={image.src} alt={image.alt} />
                 ))}
             </div>
-            <button className="loadMore" id="loadMore">
-                More Photos
-            </button>
-        </div>
+        </MainLayout>
     );
 };
 
