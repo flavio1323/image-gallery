@@ -1,13 +1,12 @@
 import React from "react";
+import LoadMoreButton from "../components/LoadMoreButton";
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, onLoadMore }) => {
     return (
         <div className="container">
             <h1 className="title">Photo Fetcher</h1>
             {children}
-            <button className="loadMore" id="loadMore">
-                More Photos
-            </button>
+            <LoadMoreButton onLoadMore={onLoadMore} />
         </div>
     );
 };
